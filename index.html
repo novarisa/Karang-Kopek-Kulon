@@ -12,7 +12,7 @@
   <link href="./assets/img/logo-dusun-1.png" rel="icon">
   <link href="./assets/img/logo-dusun-1.png" rel="apple-touch-icon">
 
-  <!-- Fonts (Sudah diperbaiki) -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -52,6 +52,12 @@
     div.member-card .member-image-wrapper { display: flex !important; justify-content: center !important; align-items: center !important; width: 100% !important; margin: 0 !important; padding: 0 !important; line-height: 0 !important; }
     div.member-card .member-image-wrapper img { display: block !important; margin: 0 auto !important; padding: 0 !important; position: static !important; float: none !important; left: auto !important; right: auto !important; transform: none !important; }
     div.member-card .member-content { margin: 0 !important; padding-top: 0 !important; text-align: center !important; }
+
+    /* Paksa elemen AOS langsung muncul jika animasi lambat */
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   </style>
 </head>
 
@@ -423,7 +429,6 @@
     let isDragging = false;
     let dragStartX = 0, dragStartY = 0;
     let translateStartX = 0, translateStartY = 0;
-    let isPinching = false, pinchStartDist = 0, pinchStartScale = 1;
 
     function applyTransform() {
       img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
@@ -503,6 +508,20 @@
 
     applyTransform();
   })();
+  </script>
+
+  <!-- Vendor JS Files -->
+  <script src="./assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/vendor/aos/aos.js"></script>
+  <script src="./assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="./assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="./assets/js/main.js"></script>
+
+  <!-- Inisialisasi AOS -->
+  <script>
+    AOS.init();
   </script>
 </body>
 </html>
